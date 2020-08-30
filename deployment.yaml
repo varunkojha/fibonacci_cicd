@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: python-deployment
+spec:
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: 123-myapp
+    spec:
+      containers:
+      - name: 123-myapp
+        image: vojha21/python-test:latest
+        ports:
+        - containerPort: 80
